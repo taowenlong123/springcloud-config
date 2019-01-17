@@ -1,0 +1,27 @@
+server:
+  port: 8094
+mybatis:
+  mapper-locations: classpath*:/mapper/**/*.xml
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+spring:
+  application:
+    name: springcloudprovider
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root
+    druid:
+      driver-class-name: com.mysql.jdbc.Driver
+      type: com.alibaba.druid.pool.DruidDataSource
+    tomcat:
+      max-active: 20
+      max-wait: 60000
+    initialSize: 1
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka
